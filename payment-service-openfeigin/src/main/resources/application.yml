@@ -12,3 +12,11 @@ spring:
         #指定nacos server的地址，不需要写http
         server-addr: localhost:8848
         namespace: c31e593e-e3cc-493b-a0cd-f744c0f664b4 # 开发环境-nacos的命名空间I
+      #配置文件方式
+feign:
+  client:
+    config:
+      default: #这里就是指的所有被加载的默认FeignClient实现的服务配置都生效
+        connectTimeout: 6000  #超时时间配置
+        readTimeout: 6000     #超时时间配置
+      #其中default可以替换成具体的服务名称

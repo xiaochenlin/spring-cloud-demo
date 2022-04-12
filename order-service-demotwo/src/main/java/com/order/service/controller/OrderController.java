@@ -19,6 +19,11 @@ public class OrderController {
      */
     @GetMapping("/getOrder")
     public Result<?>  getOrder(){
+        try {
+        Thread.sleep(5000);
+        }catch (Exception e) {
+            e.printStackTrace();
+        }
        return Result.ok("请求的是订单服务===============" + port) ;
     }
 
