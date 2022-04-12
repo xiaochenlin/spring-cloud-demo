@@ -1,0 +1,14 @@
+server:
+  port: 9000
+  servlet:
+    context-path: /order-service
+spring:
+  application:
+    name: order-service-demo
+  cloud:
+    nacos:
+      # nacos注册中心
+      discovery:
+        #指定nacos server的地址，不需要写http
+        server-addr: localhost:8848
+        namespace: c31e593e-e3cc-493b-a0cd-f744c0f664b4 # 开发环境-nacos的命名空间I
