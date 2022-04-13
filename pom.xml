@@ -1,6 +1,6 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.jeecgframework.boot</groupId>
+  <groupId>org.example.cloud</groupId>
   <artifactId>spring-cloud-parent</artifactId>
   <version>3.0</version>
   <packaging>pom</packaging>
@@ -53,46 +53,16 @@
 	</properties>
 
 	<modules>
-        <!--需要微服务，请打开
-        <module>jeecg-boot-starter</module>
-        <module>jeecg-cloud-module</module>-->
 		<module>order-service-demo</module>
 		<module>order-service-demotwo</module>
 		<module>payment-service-demo</module>
         <module>common-util</module>
 		<module>payment-service-openfeigin</module>
+		<module>cloud-config-client</module>
 	</modules>
 
 	<distributionManagement>
-	  	<repository>
-            <id>jeecg</id>
-            <name>jeecg Repository</name>
-            <url>http://maven.jeecg.com:8090/nexus/content/repositories/jeecg</url>
-        </repository>
-        <snapshotRepository>
-	        <id>jeecg-snapshots</id>
-            <name>jeecg Snapshot Repository</name>
-            <url>http://maven.jeecg.com:8090/nexus/content/repositories/snapshots/</url>
-	    </snapshotRepository>
 	</distributionManagement>
-	<repositories>
-		<repository>
-            <id>aliyun</id>
-            <name>aliyun Repository</name>
-            <url>https://maven.aliyun.com/repository/public</url>
-            <snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-        </repository>
-		<repository>
-            <id>jeecg</id>
-            <name>jeecg Repository</name>
-            <url>https://maven.jeecg.org/nexus/content/repositories/jeecg</url>
-            <snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-        </repository>
-	</repositories>
 
 	<dependencies>
 		<dependency>
@@ -136,27 +106,27 @@
 
 
 			<dependency>
-				<groupId>org.jeecgframework.boot</groupId>
+				<groupId>org.example.cloud</groupId>
 				<artifactId>order-service-demo</artifactId>
 				<version>${spring-cloud-demo.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jeecgframework.boot</groupId>
+				<groupId>org.example.cloud</groupId>
 				<artifactId>order-service-demotwo</artifactId>
 				<version>${spring-cloud-demo.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jeecgframework.boot</groupId>
+				<groupId>org.example.cloud</groupId>
 				<artifactId>payment-service-demo</artifactId>
 				<version>${spring-cloud-demo.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jeecgframework.boot</groupId>
+				<groupId>org.example.cloud</groupId>
 				<artifactId>common-util</artifactId>
 				<version>${spring-cloud-demo.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>org.jeecgframework.boot</groupId>
+				<groupId>org.example.cloud</groupId>
 				<artifactId>payment-service-openfeigin</artifactId>
 				<version>${spring-cloud-demo.version}</version>
 			</dependency>

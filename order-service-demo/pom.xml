@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>spring-cloud-parent</artifactId>
-        <groupId>org.jeecgframework.boot</groupId>
+        <groupId>org.example.cloud</groupId>
         <version>3.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -42,7 +42,7 @@
 
 
         <dependency>
-            <groupId>org.jeecgframework.boot</groupId>
+            <groupId>org.example.cloud</groupId>
             <artifactId>common-util</artifactId>
         </dependency>
     </dependencies>
