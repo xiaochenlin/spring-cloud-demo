@@ -59,6 +59,7 @@
         <module>common-util</module>
 		<module>payment-service-openfeigin</module>
 		<module>cloud-config-client</module>
+		<module>cloud-sentinel-service</module>
 	</modules>
 
 	<distributionManagement>
