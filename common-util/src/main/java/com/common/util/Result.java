@@ -51,5 +51,17 @@ public class Result<T> implements Serializable {
         return result;
     }
 
+    public static Result<Object> error(){
+        Result<Object> result = new Result<>();
+        result.setCode(500);
+        return result;
+    }
+
+    public static Result<Object> error(String message){
+        Result<Object> result = new Result<>();
+        result.setCode(500);
+        result.setMessage(message);
+        return result;
+    }
 
 }

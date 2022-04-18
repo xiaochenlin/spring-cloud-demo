@@ -60,7 +60,12 @@
 		<module>payment-service-openfeigin</module>
 		<module>cloud-config-client</module>
 		<module>cloud-sentinel-service</module>
-	</modules>
+		<module>seata-order-service</module>
+		<module>seata-account-service</module>
+		<module>seata-storage-service</module>
+		<module>cloud-gatewary-client</module>
+        <module>mybatis-springboot</module>
+    </modules>
 
 	<distributionManagement>
 	</distributionManagement>
