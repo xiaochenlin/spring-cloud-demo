@@ -79,6 +79,11 @@
             <version>1.3.2</version>
         </dependency>
 
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-jdbc</artifactId>-->
+        <!--        </dependency>-->
+
         <!--引入 OpenFeign 的依赖-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -88,7 +93,93 @@
 
     </dependencies>
 
+    <!--解决 xml 不在resource 目录下-->
 
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.json</include>
+                    <include>**/*.ftl</include>
+                </includes>
+                <filtering>false</filtering>
+            </resource>
+
+            <!--将resources目录下的配置文件编译进classes文件 -->
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+
+
+        </resources>
+    </build>
+
+
+    <!--<build>-->
+    <!--        <plugins>-->
+    <!--            &lt;!&ndash;<plugin>-->
+    <!--                <groupId>org.springframework.boot</groupId>-->
+    <!--                <artifactId>spring-boot-maven-plugin</artifactId>-->
+    <!--            </plugin>-->
+    <!--             指定JDK编译版本 &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-compiler-plugin</artifactId>-->
+    <!--                <configuration>-->
+    <!--                    <source>1.8</source>-->
+    <!--                    <target>1.8</target>-->
+    <!--                    <encoding>UTF-8</encoding>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+    <!--            &lt;!&ndash; 打包跳过测试 &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-surefire-plugin</artifactId>-->
+    <!--                <configuration>-->
+    <!--                    <skipTests>true</skipTests>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+    <!--            &lt;!&ndash; 避免font文件的二进制文件格式压缩破坏 &ndash;&gt;-->
+    <!--            <plugin>-->
+    <!--                <groupId>org.apache.maven.plugins</groupId>-->
+    <!--                <artifactId>maven-resources-plugin</artifactId>-->
+    <!--                <configuration>-->
+    <!--                    <nonFilteredFileExtensions>-->
+    <!--                        <nonFilteredFileExtension>woff</nonFilteredFileExtension>-->
+    <!--                        <nonFilteredFileExtension>woff2</nonFilteredFileExtension>-->
+    <!--                        <nonFilteredFileExtension>eot</nonFilteredFileExtension>-->
+    <!--                        <nonFilteredFileExtension>ttf</nonFilteredFileExtension>-->
+    <!--                        <nonFilteredFileExtension>svg</nonFilteredFileExtension>-->
+    <!--                    </nonFilteredFileExtensions>-->
+    <!--                </configuration>-->
+    <!--            </plugin>-->
+    <!--        </plugins>-->
+
+
+    <!--        <resources>-->
+
+
+
+    <!--            <resource>-->
+    <!--                <directory>src/main/java</directory>-->
+    <!--                <includes>-->
+    <!--                    <include>**/*.xml</include>-->
+    <!--                    <include>**/*.json</include>-->
+    <!--                    <include>**/*.ftl</include>-->
+    <!--                </includes>-->
+    <!--            </resource>-->
+
+    <!--            &lt;!&ndash;将resources目录下的配置文件编译进classes文件 &ndash;&gt;-->
+    <!--            <resource>-->
+    <!--                <directory>src/main/resources</directory>-->
+    <!--                <filtering>true</filtering>-->
+    <!--            </resource>-->
+    <!--        </resources>-->
+    <!--    </build>-->
 
 
 
