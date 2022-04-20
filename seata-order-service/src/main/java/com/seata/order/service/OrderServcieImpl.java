@@ -31,16 +31,16 @@ public class OrderServcieImpl implements  OrderService{
         order.setStatus(0);
         orderMapper.insertOrder(order);
 
+
+
         // 调用商品库存  扣减库存
-
-        accountService.decrease(order.getUserId(),order.getMoney());
-
-        // 调用用户账户金额 扣减金额
         storageService.decrease(order.getProductId(),order.getCount());
 
 
+        // 调用用户账户金额 扣减金额
+        accountService.decrease(order.getUserId(),order.getMoney());
         //更改订单状态
-        orderMapper.update(order.getUserId(),1);
+        orderMapper.update(order.getUserId(),order.getStatus());
 
         return Result.ok("创建订单成功！");
     }

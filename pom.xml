@@ -133,6 +133,21 @@
 			</dependency>
 			<dependency>
 				<groupId>org.example.cloud</groupId>
+				<artifactId>seata-account-service</artifactId>
+				<version>${spring-cloud-demo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.example.cloud</groupId>
+				<artifactId>seata-order-service</artifactId>
+				<version>${spring-cloud-demo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.example.cloud</groupId>
+				<artifactId>seata-storage-service</artifactId>
+				<version>${spring-cloud-demo.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.example.cloud</groupId>
 				<artifactId>payment-service-openfeigin</artifactId>
 				<version>${spring-cloud-demo.version}</version>
 			</dependency>
@@ -228,6 +243,30 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
+
+
+
+
+	<!--第三方maven私服 -->
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			<id>nexus-aliyun</id>-->
+<!--			<name>Nexus aliyun</name>-->
+<!--			<url>http://maven.aliyun.com/nexus/content/groups/public</url>-->
+<!--			<releases>-->
+<!--				<enabled>true</enabled>-->
+<!--			</releases>-->
+<!--			<snapshots>-->
+<!--				<enabled>false</enabled>-->
+<!--			</snapshots>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
+
+
+
+
+
 
 	<build>
 		<plugins>

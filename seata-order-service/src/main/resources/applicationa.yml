@@ -1,0 +1,37 @@
+## 该服务的端口信息
+server:
+  port: 9010
+
+
+## mybatis 配置
+mybatis:
+  ## 驼峰命名匹配
+  configuration:
+    map-underscore-to-camel-case: true
+  type-aliases-package: com.seata.order.domain
+  ## 扫描mapper文件
+  mapperLocations: classpath*:com/seata/order/*/xml/*Mapper.xml
+
+## 服务别名和nacos服务注册发现地址配置
+spring:
+  application:
+    name: seata-order-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+    alibaba:
+      seata:
+        # 与seata配置文件中 config/file.config中配置的service相同
+        tx-service-group: cl_tx_group
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/seata_order?serverTimezone=UTC&useSSL=false&useUnicode=true&characterEncoding=utf-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+## 监控相关
+management.endpoints.web.exposure.include: '*'
+
+feign:
+  hystrix:
+    enabled: false

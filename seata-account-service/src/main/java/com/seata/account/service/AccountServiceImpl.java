@@ -18,6 +18,13 @@ public class AccountServiceImpl implements AccountService{
         // 先查询账户余额
          Account account =  accountMapper.selectByUserId(userId);
          if(account!=null && account.getResidue().intValue() > money.intValue()) {
+             //模拟超时  进行事务回滚测试
+             try{
+               Thread.sleep(3000);
+             }catch (Exception e) {
+                 e.printStackTrace();
+             }
+
              // 进行扣减操作
            int decrease =   accountMapper.decrease(userId,money);
              return decrease;

@@ -4,13 +4,13 @@ spring:
   application:
     name: seata-account-service #服务名
   cloud:
-    alibaba:
-      seata:
-        #自定义事务组名称 需要与seata-server中的对应
-        tx-service-group: cl_tx_group
     nacos:
       discovery:
         server-addr: localhost:8848 #nacos 服务器地址
+    alibaba:
+      seata:
+        # 与seata配置文件中 config/file.config中配置的service相同
+        tx-service-group: cl_tx_group
   #数据源配置
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver #数据库驱动
@@ -21,11 +21,18 @@ feign:
   hystrix:
     enabled: false
   ###################################### MyBatis 配置 ######################################
-  #mybatis:
+mybatis:
   #  # 指定 mapper.xml 的位置
   mapper-locations: classpath*:com/seata/account/dao/xml/*.xml
+  configuration:
+    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   #扫描实体类的位置,在此处指明扫描实体类的包，在 mapper.xml 中就可以不写实体类的全路径名
 #  type-aliases-package: com.seata.order.domain
 #  configuration:
 #    #默认开启驼峰命名法，可以不用设置该属性
 #    map-underscore-to-camel-case: true
+  #Mybatis输出sql日志
+logging:
+  level:
+    com.seata.account.dao: DEBUG
